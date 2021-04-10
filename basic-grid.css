@@ -1,0 +1,15 @@
+.basic-grid{
+      display: grid;
+      gap: 1rem;
+
+      /* 1 too skinny */
+      grid-template-columns: repeat(12, 1fr);
+
+      /* 2 better sizing, but overflows  
+      minmax: don't go below 240px in width, and allow to expand as big a 1 Fractional Unit will allow */
+      grid-template-columns: repeat(12, minmax(240px, 1fr));
+
+      /* 3 final
+      auto-fit tells grid to calculate the correct number of rows and columns on the fly */
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
